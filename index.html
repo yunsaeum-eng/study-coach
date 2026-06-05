@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>K뷰티 해외영업 학습 코치</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
@@ -24,14 +24,24 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
       background: var(--bg);
       color: var(--text);
       font-family: 'Noto Sans KR', sans-serif;
-      height: 100vh;
+      min-height: 100vh;
+      min-height: 100dvh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
     }
 
     /* ── TOP BAR ── */
@@ -299,6 +309,7 @@
       background: var(--surface);
       border-top: 1px solid var(--border);
       padding: 16px 24px;
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
       flex-shrink: 0;
     }
     .input-wrapper {
